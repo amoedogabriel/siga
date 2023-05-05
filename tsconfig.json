@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "rootDirs": ["src", "test"],
+    "outDir": "build",
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "sourceMap": true,
+    "module": "ES2022",
+    "target": "ES2022",
+    "jsx": "react",
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "strictNullChecks": false,
+    "noUnusedLocals": true,
+    "resolveJsonModule": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true
+  },
+  "include": ["src", "test"]
+}

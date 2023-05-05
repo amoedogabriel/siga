@@ -1,0 +1,40 @@
+{
+  "name": "react-seminfo",
+  "version": "0.0.1",
+  "description": "WebSite criado para Semana de Informática (Seminfo)",
+  "main": "index.ts",
+  "scripts": {
+    "test": "jest --passWithNoTests",
+    "test:watch": "jest --passWithNoTests --watch",
+    "test:coverage": "jest --coverage --runInBand",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "seminfo",
+    "ifam",
+    "react"
+  ],
+  "author": "Breno Gonzaga",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.5.1",
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "@typescript-eslint/parser": "^5.59.2",
+    "eslint": "^8.39.0",
+    "eslint-plugin-react": "^7.32.2",
+    "git-commit-msg-linter": "^4.11.1",
+    "husky": "^8.0.3",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "lint-staged": "^13.2.2",
+    "prettier": "2.8.8",
+    "ts-jest": "^29.1.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4",
+    "webpack": "^5.82.0"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "react": "^18.2.0"
+  }
+}
