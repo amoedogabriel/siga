@@ -20,4 +20,17 @@ describe('RemoteAuthentication', () => {
     await sut.auth(null);
     expect(httpClient.url).toBe('any_url');
   });
+
+  it('Should call HttpPostClient with correct Body', async () => {
+    const account = {
+      email: 'valid_mail@mail.com',
+      password: 'valid_password',
+    };
+    const { sut, httpClient } = makeSut('any_url');
+    await sut.auth(account);
+    expect(httpClient.body).toEqual({
+      email: 'valid_mail@mail.com',
+      password: 'valid_password',
+    });
+  });
 });
