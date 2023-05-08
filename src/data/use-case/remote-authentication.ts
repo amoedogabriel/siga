@@ -2,6 +2,7 @@ import { AccountModel } from '../../domain/model/account.model';
 import { AuthModel } from '../../domain/model/auth.model';
 import { Authentication } from '../../domain/use-case/authentication.interface';
 import { InvalidCredentialsError } from '../errors/invalid-credentials.error';
+import { UnexpectedError } from '../errors/unexpected.error';
 import { HttpClient } from '../protocols/http-client.interface';
 
 export class RemoteAuthentication implements Authentication {
@@ -19,8 +20,10 @@ export class RemoteAuthentication implements Authentication {
     switch (httpResponse.statusCode) {
       case 401:
         throw new InvalidCredentialsError();
-      default:
+      case 200:
         return null;
+      default:
+        throw new UnexpectedError();
     }
   }
 }
