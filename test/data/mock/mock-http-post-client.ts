@@ -9,7 +9,7 @@ export class HttpPostClientSpy<P, R> implements HttpClient<P, R> {
   url?: string;
   body?: P;
   response: HttpResponse<R> = {
-    statusCode: HttpStatusCode.Ok,
+    statusCode: HttpStatusCode.Created,
   };
 
   async request(params: HttpParams<P>): Promise<HttpResponse<R>> {

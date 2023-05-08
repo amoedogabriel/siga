@@ -54,4 +54,25 @@ describe('RemoteAuthentication', () => {
     const promise = sut.auth(account);
     expect(promise).rejects.toThrow(new UnexpectedError());
   });
+
+  it('Should throw UnexpectedError if HttpPostClient returns 500', async () => {
+    const { sut, httpClient } = makeSut();
+    httpClient.response = {
+      statusCode: HttpStatusCode.InternalServerError,
+    };
+    const promise = sut.auth(account);
+    expect(promise).rejects.toThrow(new UnexpectedError());
+  });
+
+  it('Should return an access token if HttpPostClient returns 200', async () => {
+    const { sut, httpClient } = makeSut();
+    jest.spyOn(httpClient, 'request').mockResolvedValueOnce({
+      statusCode: HttpStatusCode.Created,
+      body: {
+        accessToken: 'valid_token',
+      },
+    });
+    const httpResponse = await sut.auth(account);
+    expect(httpResponse).toEqual({ accessToken: 'valid_token' });
+  });
 });
