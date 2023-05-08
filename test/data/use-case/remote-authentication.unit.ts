@@ -2,7 +2,10 @@ import { AccountModel } from '../../domain/model/account.model';
 import { AuthModel } from '../../domain/model/auth.model';
 import { HttpPostClientSpy } from '../mock/mock-http-post-client';
 import { RemoteAuthentication } from '../../../src/data/use-case/remote-authentication';
-import { InvalidCredentialsError } from '../../../src/data/errors/invalid-credentials.error';
+import {
+  InvalidCredentialsError,
+  UnexpectedError,
+} from '../../../src/data/errors';
 import { HttpStatusCode } from 'axios';
 
 const account = {
@@ -41,5 +44,14 @@ describe('RemoteAuthentication', () => {
     };
     const promise = sut.auth(account);
     expect(promise).rejects.toThrow(new InvalidCredentialsError());
+  });
+
+  it('Should throw UnexpectedError if HttpPostClient returns 400', async () => {
+    const { sut, httpClient } = makeSut();
+    httpClient.response = {
+      statusCode: HttpStatusCode.BadRequest,
+    };
+    const promise = sut.auth(account);
+    expect(promise).rejects.toThrow(new UnexpectedError());
   });
 });
