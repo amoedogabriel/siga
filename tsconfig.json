@@ -1,32 +1,27 @@
 {
   "compilerOptions": {
-    "rootDirs": ["src", "test"],
-    "outDir": "build",
-    "lib": ["DOM", "DOM.Iterable", "ES2022"],
-    "sourceMap": true,
+    "outDir": "./dist",
     "module": "ES2022",
     "target": "ES2022",
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "jsx": "react",
+    "rootDirs": ["src", "tests"],
+    "baseUrl": ".",
+    "paths": {
+      "@data/*": ["src/data/*"],
+      "@business/*": ["src/business/*"],
+      "@infra/*": ["src/infra/*"],
+      "@presentation/*": ["src/presentation/*"],
+      "@tests/*": ["tests/*"]
+    },
     "strict": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
-    "strictNullChecks": false,
     "noUnusedLocals": true,
     "resolveJsonModule": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "baseUrl": ".",
-    "paths": {
-      "@business/*": ["src/business/*"],
-      "@data/*": ["src/data/*"],
-      "@infra/*": ["src/infra/*"],
-      "@presentation/*": ["src/presentation/*"],
-      "@test/*": ["test/*"]
-    }
+    "strictNullChecks": false
   },
-  "include": ["src", "test"]
+  "include": ["src", "tests"]
 }
