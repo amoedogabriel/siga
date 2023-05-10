@@ -1,9 +1,9 @@
-import { HttpStatusCode } from 'axios';
 import {
   HttpClient,
   HttpResponse,
   HttpParams,
-} from '../protocols/http-client.interface';
+} from '@data/protocols/http-client.interface';
+import { HttpStatusCode } from 'axios';
 
 export class HttpPostClientSpy<P, R> implements HttpClient<P, R> {
   url?: string;

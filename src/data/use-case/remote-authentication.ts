@@ -1,9 +1,8 @@
-import { AccountModel } from '../../domain/model/account.model';
-import { AuthModel } from '../../domain/model/auth.model';
-import { Authentication } from '../../domain/use-case/authentication.interface';
-import { InvalidCredentialsError } from '../errors/invalid-credentials.error';
-import { UnexpectedError } from '../errors/unexpected.error';
-import { HttpClient } from '../protocols/http-client.interface';
+import { InvalidCredentialsError, UnexpectedError } from '@data/errors';
+import { HttpClient } from '@data/protocols/http-client.interface';
+import { AccountModel } from '@domain/model/account.model';
+import { AuthModel } from '@domain/model/auth.model';
+import { Authentication } from '@domain/use-case/authentication.interface';
 
 export class RemoteAuthentication implements Authentication {
   private readonly url: string;
