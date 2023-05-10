@@ -21,9 +21,10 @@
     "noEmit": true,
     "baseUrl": ".",
     "paths": {
-      "@domain/*": ["src/domain/*"],
+      "@business/*": ["src/business/*"],
       "@data/*": ["src/data/*"],
       "@infra/*": ["src/infra/*"],
+      "@presentation/*": ["src/presentation/*"],
       "@test/*": ["test/*"]
     }
   },

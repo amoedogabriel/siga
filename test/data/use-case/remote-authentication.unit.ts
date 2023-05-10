@@ -1,6 +1,6 @@
+import { AccountModel } from '@business/model/account.model';
+import { AuthModel } from '@business/model/auth.model';
 import { InvalidCredentialsError, UnexpectedError } from '@data/errors';
-import { AccountModel } from '@domain/model/account.model';
-import { AuthModel } from '@domain/model/auth.model';
 import { HttpPostClientSpy } from '@test/data/mock/mock-http-post-client';
 import { RemoteAuthentication } from '@data/use-case/remote-authentication';
 import { HttpStatusCode } from 'axios';

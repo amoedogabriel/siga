@@ -3,8 +3,8 @@ import {
   HttpParams,
   HttpResponse,
 } from '@data/protocols/http-client.interface';
-import { AccountModel } from '@domain/model/account.model';
-import { AuthModel } from '@domain/model/auth.model';
+import { AccountModel } from '@business/model/account.model';
+import { AuthModel } from '@business/model/auth.model';
 import axios from 'axios';
 
 export class AxiosHttpClient implements HttpClient<AuthModel, AccountModel> {
