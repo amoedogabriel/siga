@@ -11,7 +11,6 @@ export class AxiosHttpClient implements HttpClient<AuthModel, AccountModel> {
   async request(
     params: HttpParams<AuthModel>
   ): Promise<HttpResponse<AccountModel>> {
-    await axios(params.url);
-    return null;
+    return await axios.post(params.url, params.body);
   }
 }
