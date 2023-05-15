@@ -2,7 +2,7 @@ import {
   HttpClient,
   HttpResponse,
   HttpParams,
-} from '@data/protocols/http-client.interface';
+} from '@data/http/http-client.interface';
 import { HttpStatusCode } from 'axios';
 
 export class HttpPostClientSpy<P, R> implements HttpClient<P, R> {

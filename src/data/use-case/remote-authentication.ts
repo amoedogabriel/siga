@@ -2,7 +2,7 @@ import { AccountModel } from '@business/model/account.model';
 import { AuthModel } from '@business/model/auth.model';
 import { Authentication } from '@business/use-case/authentication.interface';
 import { InvalidCredentialsError, UnexpectedError } from '@data/errors';
-import { HttpClient } from '@data/protocols/http-client.interface';
+import { HttpClient } from '@data/http/http-client.interface';
 
 export class RemoteAuthentication implements Authentication {
   private readonly url: string;
