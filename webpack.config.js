@@ -18,7 +18,7 @@ const config = {
     publicPath: '/',
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', 'scss'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.css', '.scss'],
     alias: {
       '@business': path.join(__dirname, './src/business/'),
       '@data': path.join(__dirname, './src/data/'),
@@ -44,8 +44,17 @@ const config = {
         use: [stylesHandler, 'css-loader'],
       },
       {
-        test: /\.s[ac]ss$/i,
-        use: [stylesHandler, 'css-loader', 'sass-loader'],
+        test: /\.scss$/i,
+        use: [
+          { loader: stylesHandler },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+            },
+          },
+          { loader: 'sass-loader' },
+        ],
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
