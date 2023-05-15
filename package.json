@@ -1,7 +1,7 @@
 {
-  "name": "react-seminfo",
+  "name": "Siga",
   "version": "0.0.1",
-  "description": "WebSite criado para Semana de Informática (Seminfo)",
+  "description": "WebSite criado para a Disciplina de Desenvolvimento Web",
   "main": "index.ts",
   "scripts": {
     "build": "webpack --mode=production --node-env=production",
