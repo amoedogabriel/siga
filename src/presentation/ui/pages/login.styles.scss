@@ -1,0 +1,97 @@
+$background: #f5f6fa;
+$background-input: #dfdfdf;
+$background-submit: #212529;
+$black: #212529;
+$gray: #dfdfdf;
+$white: #fff;
+
+body {
+  background-color: $background;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid $gray;
+  border-radius: 10px;
+  font-size: 16px;
+  color: $black;
+  background-color: $background-input;
+  &:focus {
+    outline: none;
+  }
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .header {
+    background-image: url('/public/assets/logo-siga-branco.png');
+    background-size: cover;
+    width: 90%;
+    max-width: 500px;
+    height: 250px;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 500px;
+
+    .inputWrap {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      input {
+        flex-grow: 1;
+      }
+
+      .status {
+        position: absolute;
+        right: 5px;
+      }
+    }
+
+    .linkCenter {
+      text-align: center;
+    }
+
+    .linkRight {
+      margin-top: 0;
+      text-align: right;
+    }
+
+    label {
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    button {
+      width: 100%;
+      margin: 20px 0 20px 0;
+      padding: 10px;
+      border: 1px solid $gray;
+      border-radius: 10px;
+      font-size: 16px;
+      color: $white;
+      background-color: $background-submit;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .errorWrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+    }
+  }
+  .footer {
+  }
+}
